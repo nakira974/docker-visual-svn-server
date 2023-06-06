@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  svn-server:
+    build: .
+    ports:
+      - "3690:3690"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+    volumes:
+      - ./logs:/var/log
